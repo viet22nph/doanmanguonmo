@@ -190,3 +190,43 @@ if ($ac == 'logout')
     <?php
 
 }
+if($ac == 'showCart')
+{
+    include ROOT . '/module/showCart.php';
+}
+
+if ($ac == 'addCart')
+{
+    //Kiểm tra session user login
+    if (!isset($_SESSION["user_login"]) || !$_SESSION["user_login"])
+    {
+        // điều hướng
+        ?>
+        <script language="javascript">
+
+            window.location = "index.php?ac=login";
+
+        </script>
+        <?php
+
+    }
+    $id = Utils::getIndex('id');
+    $quantity = Utils::getIndex('quantity', 1);
+
+    $pro = new Product();
+    $data = $pro->getDetail($id);
+    if (isset($_SESSION['cart'][$id]))
+        $_SESSION['cart'][$id]['sl'] = $quantity + 1;
+    else
+        $_SESSION['cart'][$id] = ['data' => $data, 'sl' => $quantity];
+
+    $referer = $_SERVER['HTTP_REFERER'];
+     // điều hướng
+     ?>
+     <script language="javascript">
+
+         window.location = "<?php echo $referer;?>";
+
+     </script>
+     <?php
+}

@@ -36,7 +36,7 @@ include ROOT . '/admins/inc/message.php';
                         title="Chỉnh sửa">
                         <i class="bi bi-pencil"></i></a>&nbsp;&nbsp;
                     <a class="btn btn-outline-primary" href="#exampleModal<?php echo $r["UserId"]; ?>" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
+                        data-bs-target="#exampleModal<?php echo $r["UserId"]; ?>">
                         <i class="bi bi-trash"></i>
                     </a>
                     <div class="modal fade" id="exampleModal<?php echo $r["UserId"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel"

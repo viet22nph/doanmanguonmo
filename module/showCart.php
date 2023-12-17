@@ -138,7 +138,7 @@
                                         <p class="mb-0">(including VAT)</p>
                                     </strong>
                                 </div>
-                                <span><strong><?php //echo $total?></strong></span>
+                                <span><strong><?php echo $total?></strong></span>
                             </li>
                         </ul>
 

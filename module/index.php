@@ -230,3 +230,62 @@ if ($ac == 'addCart')
      </script>
      <?php
 }
+
+
+if ($ac == 'updateItemCart')
+{
+    $i = Utils::postIndex('id');
+    $quantity = Utils::postIndex('quantity');
+    if ($quantity < 1)
+    {
+        ?>
+        <script language="javascript">
+
+            window.location = "index.php?ac=showCart";
+
+        </script>
+        <?php
+    }
+
+    if (isset($_SESSION['cart'][$i]))
+    {
+
+        $cart = $_SESSION['cart'];
+        $cart[$i]['sl'] = $quantity;
+        $_SESSION['cart'] = $cart;
+    }
+    ?>
+    <script language="javascript">
+
+        window.location = "index.php?ac=showCart";
+
+    </script>
+    <?php
+}
+
+if ($ac == 'removeItemCart')
+{
+    $id = Utils::getIndex('id');
+    $cart = $_SESSION['cart'];
+    foreach ($cart as $key => $item)
+    {
+        if ($item['id'] == $id)
+        {
+            unset($cart[$key]);
+            break;
+        }
+    }
+    $_SESSION['cart'] = $cart;
+    ?>
+    <script language="javascript">
+
+        //window.location = "index.php?ac=showCart";
+
+    </script>
+    <?php
+	}
+
+    if ($ac == 'checkout')
+	{
+		include ROOT . '/module/checkout.php';
+	}

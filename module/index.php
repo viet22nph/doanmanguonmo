@@ -11,3 +11,7 @@ if ($ac == 'home')
     include ROOT . '/module/showProduct.php';
 }
 
+if ($ac == 'detail')
+{   
+    include ROOT . '/module/detail.php';
+}

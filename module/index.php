@@ -184,7 +184,7 @@ if ($ac == 'logout')
     ?>
     <script language="javascript">
 
-        //window.location = "index.php";
+        window.location = "index.php";
 
     </script>
     <?php

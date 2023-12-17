@@ -269,7 +269,7 @@ if ($ac == 'removeItemCart')
     $cart = $_SESSION['cart'];
     foreach ($cart as $key => $item)
     {
-        if ($item['id'] == $id)
+        if ($key == $id)
         {
             unset($cart[$key]);
             break;
@@ -279,7 +279,7 @@ if ($ac == 'removeItemCart')
     ?>
     <script language="javascript">
 
-        //window.location = "index.php?ac=showCart";
+        window.location = "index.php?ac=showCart";
 
     </script>
     <?php

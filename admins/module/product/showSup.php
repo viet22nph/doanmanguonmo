@@ -31,7 +31,7 @@ $data = $supplier->getAll();
                             class="bi bi-pencil"></i></a>&nbsp;&nbsp;
 
                     <a class="btn btn-outline-primary" href="#exampleModal<?php echo $r["Supplier_Id"]; ?>" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
+                        data-bs-target="#exampleModal<?php echo $r["Supplier_Id"]; ?>">
                         <i class="bi bi-trash"></i>
                     </a>
 

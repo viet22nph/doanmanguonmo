@@ -44,7 +44,7 @@
                                         <!-- Data -->
                                         <p><strong><?php echo $r['data']['Pro_Name']; ?></strong></p>
                                         <a class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                                            href="index.php?ac=removeItemCart&id<?php echo $r['data']['Pro_Id'] ?>" title="Remove item">
+                                            href="index.php?ac=removeItemCart&id=<?php echo $r['data']['Pro_Id'] ?>" title="Remove item">
                                             <i class="bi bi-trash"></i>
                                         </a>
                                         <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
